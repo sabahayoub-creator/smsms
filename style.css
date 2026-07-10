@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght=400;500;600;700&display=swap');
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #000000;
+    color: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 120px;
+}
+
+
+.video-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(18, 6, 6, 0.6);
+}
+
+.content-wrapper{
+    position:relative;
+    z-index:2;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.6); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 24px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+    nav {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+.nav-logo { 
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+    cursor: pointer;
+}
+
+.logo-icon {
+    color: #fbbf24;
+    margin-right: 8px;
+    font-size:30px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05); 
+    opacity: 0.7;          
+  }
+}
+
+
+
+
+.nav-links {
+    display: flex;        
+    align-items: center;
+    gap: 16px;          
+    position: absolute;   
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+
+@media (min-width: 1024px) {
+    .nav-links {
+        gap:40px;      
+    }
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding-bottom: 3px;
+    transition: color 0.2s ease;
+  white-space: nowrap; 
+}
+
+
+.nav-link:hover {
+    color: #fbbf24;
+}
+
+.nav-link.active {
+    color: #fbbf24;
+    border-bottom: 2px solid #fbbf24;
+}
+ 
+
+
+main {
+   
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+}
+
+@media (min-width: 768px) {
+    main{
+        padding: 80px 64px;
+    }
+}
+
+.container {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.5));
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 75px;
+    margin-bottom:24px ;
+}
+
+@media (min-width: 768px) {
+  h1 {
+        font-size: 60px;
+    }
+}
+
+span{
+    color: #fbbf24;
+}
+
+.description {
+    color: #d1d5db;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 672px;
+    margin: 0 auto 24px auto;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) { 
+    .description {
+        font-size: 16px;
+    }
+}
+.button-call {
+    display: inline-block;
+}
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+     margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.25);
+    transition:.6s;
+}
+
+
+
+.button:hover {
+    background-color: #fbbf24;
+    color: #000000;
+}
+
+.arrow-icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.button:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn i {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        padding: 14px;
+        border-radius: 50%;
+    }
+    .whatsapp-text {
+        display: none;
+    }
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeIn 1s ease forwards;
+}
+
+.fade-delay{
+    animation-delay:.5s;
+}
+
+.fade-delay2{
+    animation-delay:1s;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
